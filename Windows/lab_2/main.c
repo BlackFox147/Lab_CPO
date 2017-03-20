@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	struct Stack *stack = NULL;
 	struct Data data;
 
-	CreateSignal(&data);
+	CreateSignal();
 
 	printf("Run!!!\n");
 	int cnt = 0;
