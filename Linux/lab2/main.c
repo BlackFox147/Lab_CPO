@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
 	struct Stack *stack = NULL;
-	struct Stack *temp = NULL;
+//	struct Stack *temp = NULL;
 	struct Data data;
 	int cnt = 0;
 	
