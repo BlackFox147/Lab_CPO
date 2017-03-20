@@ -54,6 +54,6 @@ void pop(struct Stack **);
 void CreateNewProcess(struct Data *, struct Stack **);
 void CloseProcess(struct Stack **, struct Data *, int code);
 
-void CreateSignal(struct Stack **,struct Data *);
+//void CreateSignal(struct Stack **,struct Data *);
 
-void PrintProcesses(char **argv, struct Data *);
+//void PrintProcesses(char **argv, struct Data *);
