@@ -2,7 +2,7 @@
 
 
 
-void CreateSignal(struct Data *data)
+void CreateSignal()
 {
 	HANDLE Event = CreateEvent(NULL, FALSE, FALSE,"MyEvent");
 
@@ -22,7 +22,7 @@ void CreateNewProcess(struct Data *data, struct Stack **stack)
 	ZeroMemory(&stInfo, sizeof(STARTUPINFO));
 	stInfo.cb = sizeof(STARTUPINFO);
 
-	CreateProcess("D:\\#”˜∏·‡\\¿œ \\À‡·˚\\SPO-2\\Debug\\Wait.exe", NULL, NULL, NULL, FALSE, 0, NULL, NULL, &stInfo, &prInfo);
+	CreateProcess("mainW.exe", NULL, NULL, NULL, FALSE, 0, NULL, NULL, &stInfo, &prInfo);
 	struct Data data_pr;
 	data_pr.prInfo = prInfo;
 
