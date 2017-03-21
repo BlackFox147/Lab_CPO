@@ -30,12 +30,12 @@ int main(int argc, char* argv[])
 		{
 			printf("%d___", getpid());
 			fflush(stdout);
-			Sleep(50);
+//			Sleep(50);
 		}
 		printf("\n");
 
 		SetEvent(Event);
-		Sleep(2000);
+//		Sleep(2000);
 	}
 
 	printf("End\n");

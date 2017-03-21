@@ -16,7 +16,7 @@ char _getch()
 
 
 void CreateNewProcess(struct Data *data, struct Stack **stack)
-{	
+{		
 	switch(data->pid = fork())
 	{
 		case -1:
@@ -27,14 +27,24 @@ void CreateNewProcess(struct Data *data, struct Stack **stack)
 
 			while (1)
 			{
-				for (int i = 0; i < 5; i++)
-				{
+				
+				
+				semop(data->semid, &(data->mybuff), 1);
+				semop(data->semid, &(data->mybuff1), 1);
+				sleep(1/2);
+				
+					
 					printf("%d___", getpid());
-					fflush(stdout);
-					sleep(1/2);
-				}
-				printf("\n");
-				sleep(2);
+					printf("%d___", getpid());
+					
+
+				
+				printf("\n");				
+
+				data->mybuff1.sem_op = -1;
+				semop(data->semid, &(data->mybuff1), 1);
+				data->mybuff1.sem_op = 1;	
+
 			}
 		}	break;
 		
@@ -63,6 +73,18 @@ void CloseProcess(struct Stack **stack, struct Data *data, int code)
 
 		return;
 	}
+}
+
+
+void CreateSignal(struct Data *data)
+{
+	data->key = ftok("/home/Alexandr/spolab2/lab2", 0);
+	data->semid = semget(data->key, 1, 0666 | IPC_CREAT);
+	semctl(data->semid, 0, SETVAL, (int)0);
+	data->mybuff.sem_num = 0;
+
+	data->mybuff1.sem_num = 0;
+	data->mybuff1.sem_op = 1;
 }
 
 

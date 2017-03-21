@@ -26,7 +26,12 @@ struct Data
 	PROCESS_INFORMATION prInfo;
 #else
 	pid_t pid;
-#endif
+	key_t key;
+	int semid;
+	struct sembuf mybuff, mybuff1;
+
+	
+	#endif
 };
 
 struct Stack
@@ -50,3 +55,7 @@ void pop(struct Stack **);
 
 void CreateNewProcess(struct Data *, struct Stack **);
 void CloseProcess(struct Stack **, struct Data *, int code);
+
+void CreateSignal(struct Data *data);
+
+

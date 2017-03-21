@@ -29,7 +29,9 @@ struct Data
 	key_t key;
 	int semid;
 	struct sembuf mybuff, mybuff1;
-#endif
+
+	
+	#endif
 };
 
 struct Stack
@@ -54,6 +56,6 @@ void pop(struct Stack **);
 void CreateNewProcess(struct Data *, struct Stack **);
 void CloseProcess(struct Stack **, struct Data *, int code);
 
-void CreateSignal();
+void CreateSignal(struct Data *data);
 
 

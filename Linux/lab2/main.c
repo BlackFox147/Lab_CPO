@@ -6,39 +6,52 @@ int main(int argc, char *argv[])
 {
 	struct Stack *stack = NULL;
 	struct Data data;
-	int cnt = 0;
 
-	printf("Run!!!\n");
 	
+		CreateSignal(&data); 
+	
+	
+	printf("Run!!!\n");
+	int cnt = 0;
 	while (1)
 	{
-			switch (_getch())
-			{
-			case '+':
-			{
-				CreateNewProcess(&data, &stack);
-				cnt++;
-	
-			}
-				break;
-			case '-':
-			{
-				if (cnt != 0){				
-					CloseProcess(&stack, &data, 0);
-					cnt--;
-				}
-			}
+		/*char ss;
+		ss = 'a' + cnt;
 
+		char* ptr = &ss;
+		ptr[1] = '\0';
+		wchar_t wtext[5];
+		mbstowcs(wtext, ptr, 2);
+		LPWSTR str = wtext;*/
+
+		switch (_getch())
+		{
+		case '+':
+		{
+			CreateNewProcess(&data, &stack);
+			cnt++;
+		}
 			break;
-			case 'q':
-			{			
-				CloseProcess(&stack, &data, 1);
-				cnt = 0;
-				
-				return 0;
+		case '-':
+		{
+			if (cnt != 0){				
+				CloseProcess(&stack, &data, 0);
+				cnt--;
 			}
-				break;
-			}
+		}
+
+		break;
+		case 'q':
+		{			
+			CloseProcess(&stack, &data, 1);
+			cnt = 0;
+			//	free(ptr);
+			return 0;
+		}
+			break;
+		}
+
+		
 	}
 }
 

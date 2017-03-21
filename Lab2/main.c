@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
 	struct Stack *stack = NULL;
 	struct Data data;
 
-	#if defined(_WIN32) || defined(_WIN64) 
-		CreateSignal(); 
-	#endif
+	
+		CreateSignal(&data); 
+	
 	
 	printf("Run!!!\n");
 	int cnt = 0;
