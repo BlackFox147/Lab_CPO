@@ -2,7 +2,7 @@
 
 
 
-void CreateSignal()
+void CreateSignal(struct Data *data)
 {
 	HANDLE Event = CreateEvent(NULL, FALSE, FALSE,"MyEvent");
 

@@ -26,12 +26,8 @@ int main(int argc, char* argv[])
 	{
 		WaitForSingleObject(Event, INFINITE);
 
-		for (int i = 0; i < 5; i++)
-		{
-			printf("%d___", getpid());
-			fflush(stdout);
-//			Sleep(50);
-		}
+		printf("%d___", getpid());
+		printf("%d___", getpid());
 		printf("\n");
 
 		SetEvent(Event);
