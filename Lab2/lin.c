@@ -31,9 +31,12 @@ void CreateNewProcess(struct Data *data, struct Stack **stack)
 				
 				semop(data->semid, &(data->mybuff), 1);
 				semop(data->semid, &(data->mybuff1), 1);
-				sleep(1/2);
+//				sleep(1/2);
 				
 					
+					printf("%d___", getpid());
+					printf("%d___", getpid());
+					printf("%d___", getpid());
 					printf("%d___", getpid());
 					printf("%d___", getpid());
 					
