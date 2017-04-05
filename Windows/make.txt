@@ -1,5 +1,0 @@
-mingw32-make
-
-
-//не помню, что, но помогло с make
-for %i in (make.exe) do @echo. %~&PATH:i
