@@ -113,7 +113,7 @@ void WaitForClient(struct Info * inf)
  
 void WaitInput(struct Info * inf)
 {
-	semop(semID, &(inf->semBuffServer), 1);
+	semop(inf->semID, &(inf->semBuffServer), 1);
 
 	while (semctl(inf->semID, 0, GETVAL, 0) != 1);
 }

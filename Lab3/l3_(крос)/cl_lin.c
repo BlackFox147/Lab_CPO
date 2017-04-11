@@ -18,7 +18,7 @@ void StartWork(struct Info *inf)
 {
 	inf->segmentPtr = NULL;
 	
-	key = ftok("server.c", 'c');
+	int key = ftok("server.c", 'c');
 	inf->segmentID = shmget(key, BUFFER_SIZE, 0666);
 		
 	if (inf->segmentID == -1)
